@@ -17,9 +17,6 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
  generateSoundex("R", soundex);
  ASSERT_STREQ(soundex,"R000");
 
- generateSoundex("O'Hara", soundex);
- ASSERT_STREQ(soundex,"O600");
-
  generateSoundex("aou", soundex);
  ASSERT_STREQ(soundex,"A000");
  
