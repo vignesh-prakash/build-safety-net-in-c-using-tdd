@@ -12,12 +12,16 @@ char getSoundexCode(char c) {
     };
     return codes[toupper(c) - 'A'];}
 
+void updatecode(char name, char *soundex,int *index){
+     char code = getSoundexCode(name);
+     if (code != '0' && code != soundex[*index - 1]) {
+         soundex[(*index)++] = code;
+     } 
+}
+
 void parsename(const char *name, int *index, int len, char *soundex) {
     for (int i = 1; i < len && *index < 4; i++) {
-        char code = getSoundexCode(name[i]);
-        if (code != '0' && code != soundex[*index - 1]) {
-            soundex[(*index)++] = code;
-        }
+        updatecode(name[i],soundex,index);
     }    
 }
 
