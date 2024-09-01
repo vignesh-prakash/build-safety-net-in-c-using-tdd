@@ -12,15 +12,6 @@ char getSoundexCode(char c) {
     };
     return codes[toupper(c) - 'A'];}
 
-void generateSoundex(const char *name, char *soundex) {
-    int len = strlen(name);
-    soundex[0] = toupper(name[0]);
-    int sIndex = 1;
-    parsename(name,&sIndex,len,soundex);
-    zeropadding(sIndex,soundex);
-    soundex[4] = '\0';
-}
-
 void parsename(const char *name, int *index, int len, char *soundex) {
     for (int i = 1; i < len && *index < 4; i++) {
         char code = getSoundexCode(name[i]);
@@ -29,9 +20,19 @@ void parsename(const char *name, int *index, int len, char *soundex) {
         }
     }    
 }
+
 void zeropadding(int sIndex, char *soundex) {
         while (sIndex < 4) {
         soundex[sIndex++] = '0';
     }
+}
+
+void generateSoundex(const char *name, char *soundex) {
+    int len = strlen(name);
+    soundex[0] = toupper(name[0]);
+    int sIndex = 1;
+    parsename(name,&sIndex,len,soundex);
+    zeropadding(sIndex,soundex);
+    soundex[4] = '\0';
 }
 #endif // SOUNDEX_H
