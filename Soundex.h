@@ -31,6 +31,7 @@ void zeropadding(int sIndex, char *soundex) {
     }
 }
 
+
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
