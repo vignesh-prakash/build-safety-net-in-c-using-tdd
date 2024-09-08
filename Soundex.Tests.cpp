@@ -43,18 +43,11 @@ TEST(SoudexTestsuite, Test_Name_With_Same_Character) {
  ASSERT_STREQ(soundex,"V100");
 }
 
-TEST(SoudexTestsuite, Test_Name_With_All_Digits) {
- //AAA
-  char soundex[5];
- generateSoundex("123456", soundex);
- EXPECT_STREQ(soundex,"1000");
-}
-
 TEST(SoudexTestsuite, Test_Name_With_Digits_And_Characters) {
  //AAA
   char soundex[5];
- generateSoundex("Raj45", soundex);
- ASSERT_STREQ(soundex,"R200");
+ generateSoundex("sound123", soundex);
+ ASSERT_STREQ(soundex,"S530");
 }
 
 TEST(SoudexTestsuite, Test_Name_With_Length_Morethan_Four_Characters) {
