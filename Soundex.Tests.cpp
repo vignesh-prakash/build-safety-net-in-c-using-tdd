@@ -36,7 +36,7 @@ TEST(SoudexTestsuite, Test_Name_With_Special_Character) {
  ASSERT_STREQ(soundex,"O600");
 }
 
-TEST(SoudexTestsuite, Test_Name_With_Same_Character) {s
+TEST(SoudexTestsuite, Test_Name_With_Same_Character) {
  //AAA
   char soundex[5];
  generateSoundex("VVVV", soundex);
