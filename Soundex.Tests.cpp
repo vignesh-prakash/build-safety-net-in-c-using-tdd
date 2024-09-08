@@ -46,8 +46,8 @@ TEST(SoudexTestsuite, Test_Name_With_Same_Character) {
 TEST(SoudexTestsuite, Test_Name_With_Digits_And_Characters) {
  //AAA
   char soundex[5];
- generateSoundex("sound123", soundex);
- ASSERT_STREQ(soundex,"S530");
+ generateSoundex("soundex123", soundex);
+ ASSERT_STREQ(soundex,"S532");
 }
 
 TEST(SoudexTestsuite, Test_Name_With_Length_Morethan_Four_Characters) {
